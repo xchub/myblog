@@ -14,6 +14,7 @@
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
+                @include('admin.partials.success')
                   <table id="tags-table" class="table table-bordered table-striped">
                     <thead>
                       <tr>
@@ -29,15 +30,15 @@
                       <tr>
                         <td>{{ $tag->tag }}</td>
                         <td>{{ $tag->title }}</td>
-                        <td>{{ $tag->page_image }}</td>
                         <td>{{ $tag->meta_description }}</td>
+                        <td>{{ $tag->page_image }}</td>
                         <td>
                         	<a href="{{ url('admin/tag') }}/{{ $tag->id }}/edit" class="btn btn-xs btn-info">
                   				<i class="fa fa-edit"></i> 编辑
                 			   </a>
-                    			<a href="{{ url('admin/tag') }}/{{ $tag->id }}/delete" class="btn btn-xs btn-danger">
+                    			<button onclick="delete_file({{ $tag->id }},{{ $tag->title }})" class="btn btn-xs btn-danger">
                       				<i class="fa fa-close"></i> 删除	
-                    			</a>
+                    			</button>
                 		    </td>
                       </tr>
                       @endforeach
@@ -48,6 +49,38 @@
             </div><!-- /.col -->
 
     </div><!-- /.row -->
+  <div class="modal fade" id="modal-tag-delete">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <h4 class="modal-title">Please Confirm</h4>
+      </div>
+      <div class="modal-body">
+        <p class="lead">
+          <i class="fa fa-question-circle fa-lg"></i> &nbsp;
+          确定删除标签
+          <kbd><span id="delete-tag-name1"></span></kbd>
+          ?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <form method="POST" id="action" action="{{ url('admin/tag') }}">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            取消
+          </button>
+          <button type="submit" class="btn btn-danger">
+            确定
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 @section('scripts')
 <script>
@@ -79,5 +112,11 @@
 			}
 		});
     });
+    function delete_file(id, title) {
+      $("#delete-tag-name1").html(title);
+      $("#delete-tag-name2").val(title);
+      $("#action").attr("action","{{ url('admin/tag') }}/"+id);
+      $("#modal-tag-delete").modal("show");
+    }
 </script>
 @endsection

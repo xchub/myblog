@@ -34,7 +34,7 @@
         
         @foreach (config('categories') as $categories)
 
-        <li @if (Request::is($categories['url'])) class="active" @endif>
+        <li @if ((Request::is($categories['url'].'/*')) || (Request::is($categories['url']))) class="active" @endif>
           <a href="{{ url($categories['url']) }}">
             <i class="{{$categories['class']}}"></i> <span>{{$categories['name']}}</span>
           </a>

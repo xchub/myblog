@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"su",
+				"subfolders"
+			],
+			[
+				"di",
+				"directory	(UploadController.php)"
+			],
+			[
+				"str_rep",
+				"str_replace"
+			],
+			[
+				"cle",
+				"clearFolder"
+			],
+			[
+				"s",
+				"storage	(TagController.php)"
+			],
+			[
+				"Ta",
+				"TagUpdateRequest	(TagController.php)"
+			],
+			[
+				"T",
+				"TagUpdateRequest	(TagController.php)"
+			],
+			[
+				"Re",
+				"Requests"
+			],
+			[
+				"me",
+				"meta_description"
+			],
+			[
+				"page",
+				"page_image"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
 				"ca",
 				"categories"
 			],
@@ -26,10 +70,6 @@
 			[
 				"Up",
 				"UploadsManager	(UploadsManager.php)"
-			],
-			[
-				"cle",
-				"cleanFolder"
 			],
 			[
 				"mime",
@@ -200,10 +240,6 @@
 				"array	(Slim.php)"
 			],
 			[
-				"s",
-				"strlen"
-			],
-			[
 				"unse",
 				"unset"
 			],
@@ -232,69 +268,28 @@
 	"buffers":
 	[
 		{
-			"file": "app/Http/routes.php",
+			"file": "app/Http/Controllers/Admin/TagController.php",
 			"settings":
 			{
-				"buffer_size": 1431,
+				"buffer_size": 3157,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/auth/login.blade.php",
+			"file": "app/Services/UploadsManager.php",
 			"settings":
 			{
-				"buffer_size": 3095,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/Auth/AuthController.php",
-			"settings":
-			{
-				"buffer_size": 1900,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/lang/en/validation.php",
-			"settings":
-			{
-				"buffer_size": 5675,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/app.php",
-			"settings":
-			{
-				"buffer_size": 8263,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/lang/zh-CN/home.php",
-			"settings":
-			{
-				"buffer_size": 1059,
+				"buffer_size": 3699,
 				"line_ending": "Unix",
 				"name": "<?php"
 			}
 		},
 		{
-			"file": "vendor/laravel/framework/src/Illuminate/Validation/Validator.php",
+			"file": "/Users/ws/Sites/myapp/app/Http/Controllers/Admin/UploadController.php",
 			"settings":
 			{
-				"buffer_size": 71898,
+				"buffer_size": 3229,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/admin/partials/errors.blade.php",
-			"settings":
-			{
-				"buffer_size": 184,
-				"line_ending": "Unix",
-				"name": "@if (count($errors) > 0)"
 			}
 		}
 	],
@@ -391,72 +386,84 @@
 	"expanded_folders":
 	[
 		"/Users/ws/Sites/myblog",
-		"/Users/ws/Sites/myblog/app/Http/Middleware",
+		"/Users/ws/Sites/myblog/app/Exceptions",
+		"/Users/ws/Sites/myblog/app/Http/Controllers/Admin",
+		"/Users/ws/Sites/myblog/app/Http/Controllers/Auth",
+		"/Users/ws/Sites/myblog/app/Services",
 		"/Users/ws/Sites/myblog/config",
-		"/Users/ws/Sites/myblog/public/bower_components",
-		"/Users/ws/Sites/myblog/public/bower_components/AdminLTE",
-		"/Users/ws/Sites/myblog/public/bower_components/AdminLTE/pages/examples",
-		"/Users/ws/Sites/myblog/public/bower_components/AdminLTE/plugins",
-		"/Users/ws/Sites/myblog/public/bower_components/AdminLTE/plugins/iCheck",
-		"/Users/ws/Sites/myblog/resources",
-		"/Users/ws/Sites/myblog/resources/lang",
+		"/Users/ws/Sites/myblog/database/migrations",
 		"/Users/ws/Sites/myblog/resources/lang/en",
+		"/Users/ws/Sites/myblog/resources/views",
 		"/Users/ws/Sites/myblog/resources/views/admin",
-		"/Users/ws/Sites/myblog/resources/views/auth",
-		"/Users/ws/Sites/myblog/storage/logs",
-		"/Users/ws/Sites/myblog/vendor/laravel/framework/src/Illuminate",
-		"/Users/ws/Sites/myblog/vendor/laravel/framework/src/Illuminate/Foundation/Auth",
-		"/Users/ws/Sites/myblog/vendor/laravel/framework/src/Illuminate/Validation",
-		"/Users/ws/Sites/myblog/vendor/overtrue",
-		"/Users/ws/Sites/l5beauty",
 		"/Users/ws/Sites/l5beauty/app",
-		"/Users/ws/Sites/l5beauty/app/Http",
-		"/Users/ws/Sites/l5beauty/config",
+		"/Users/ws/Sites/l5beauty/app/Http/Controllers/Admin",
 		"/Users/ws/Sites/l5beauty/resources",
 		"/Users/ws/Sites/l5beauty/resources/views",
 		"/Users/ws/Sites/l5beauty/resources/views/admin",
-		"/Users/ws/Sites/l5beauty/resources/views/admin/post",
+		"/Users/ws/Sites/l5beauty/resources/views/admin/tag",
+		"/Users/ws/Sites/l5beauty/resources/views/admin/upload",
 		"/Users/ws/Sites/myapp/app",
 		"/Users/ws/Sites/myapp/app/Http",
 		"/Users/ws/Sites/myapp/app/Http/Controllers",
-		"/Users/ws/Sites/myapp/app/Http/Controllers/Admin",
-		"/Users/ws/Sites/myapp/config",
-		"/Users/ws/Sites/myapp/resources",
-		"/Users/ws/Sites/myapp/resources/views",
-		"/Users/ws/Sites/myapp/resources/views/admin",
-		"/Users/ws/Sites/myapp/resources/views/admin/post",
-		"/Users/ws/Sites/myapp/resources/views/admin_"
+		"/Users/ws/Sites/myapp/app/Http/Controllers/Admin"
 	],
 	"file_history":
 	[
-		"/Users/ws/Sites/myblog/config/app.php",
-		"/Users/ws/Sites/myblog/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+		"/Users/ws/Sites/myapp/app/Http/Controllers/Admin/UploadController.php",
+		"/Users/ws/Sites/myblog/app/helpers.php",
+		"/Users/ws/Sites/myblog/config/blog.php",
+		"/Users/ws/Sites/myblog/config/filesystems.php",
+		"/Users/ws/Sites/myblog/composer.json",
+		"/Users/ws/Sites/myblog/app/helper.php",
+		"/Users/ws/Sites/myblog/resources/views/admin/sidebar.blade.php",
+		"/Users/ws/Sites/myblog/resources/views/admin/layout.blade.php",
+		"/Users/ws/Sites/myblog/resources/views/admin/tag/create.blade.php",
+		"/Users/ws/Sites/myblog/resources/views/admin/header.blade.php",
+		"/Users/ws/Sites/myblog/resources/views/admin/tag/index.blade.php",
+		"/Users/ws/Library/Application Support/Sublime Text 3/Packages/User/Tag Package.sublime-settings",
+		"/Users/ws/Library/Application Support/Sublime Text 3/Packages/Tag/Tag Package.sublime-settings",
+		"/Users/ws/Sites/l5beauty/resources/views/admin/upload/index.blade.php",
+		"/Users/ws/Sites/myblog/app/Http/Requests/TagUpdateRequest.php",
+		"/Users/ws/Sites/l5beauty/resources/views/admin/upload/_modals.blade.php",
+		"/Users/ws/Sites/l5beauty/resources/views/admin/tag/edit.blade.php",
+		"/Users/ws/Sites/l5beauty/resources/views/admin/tag/_form.blade.php",
+		"/Users/ws/Sites/l5beauty/app/Http/Controllers/Admin/TagController.php",
+		"/Users/ws/Sites/myblog/resources/views/admin/post/index.blade.php",
+		"/Users/ws/Sites/myblog/app/Http/routes.php",
+		"/Users/ws/Sites/myblog/app/Http/Requests/TagCreateRequest.php",
+		"/Users/ws/Sites/myblog/resources/views/admin/partials/success.blade.php",
+		"/Users/ws/Sites/myblog/resources/views/admin/partials/errors.blade.php",
+		"/Users/ws/Sites/l5beauty/resources/views/admin/tag/index.blade.php",
+		"/Users/ws/Sites/l5beauty/resources/views/admin/tag/create.blade.php",
+		"/Users/ws/Sites/l5beauty/app/Http/Requests/TagCreateRequest.php",
+		"/Users/ws/Sites/myblog/database/migrations/2015_11_12_012821_create_tags_table.php",
+		"/Users/ws/Sites/myblog/app/Tag.php",
+		"/Users/ws/Sites/myblog/app/Http/Controllers/Auth/AuthController.php",
+		"/Users/ws/Sites/myblog/resources/views/auth/login.blade.php",
+		"/Users/ws/Sites/myblog/config/categories.php",
 		"/Users/ws/Sites/myblog/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/Users/ws/Sites/myblog/resources/lang/en/validation.php",
+		"/Users/ws/Sites/myblog/vendor/laravel/framework/src/Illuminate/Validation/Validator.php",
+		"/Users/ws/Sites/myblog/config/app.php",
+		"/Users/ws/Sites/myblog/resources/lang/zh-CN/home.php",
+		"/Users/ws/Sites/myblog/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
 		"/Users/ws/Sites/myblog/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php",
 		"/Users/ws/Sites/myblog/config/database.php",
 		"/Users/ws/Sites/myblog/.env",
 		"/Users/ws/Sites/myapp/.env",
-		"/Users/ws/Sites/myblog/resources/views/admin/sidebar.blade.php",
-		"/Users/ws/Sites/myblog/resources/views/admin/layout.blade.php",
-		"/Users/ws/Sites/myblog/resources/views/admin/post/index.blade.php",
-		"/Users/ws/Sites/myblog/resources/views/auth/login.blade.php",
 		"/Users/ws/Sites/l5beauty/config/database.php",
 		"/Users/ws/Sites/l5beauty/.env",
 		"/Users/ws/Sites/myblog/.env.example",
 		"/Users/ws/Sites/myblog/public/bower_components/AdminLTE/pages/examples/login.html",
 		"/Users/ws/Sites/myblog/resources/views/admin/auth/login.blade.php",
-		"/Users/ws/Sites/myblog/resources/views/admin/header.blade.php",
 		"/Users/ws/Sites/myblog/app/Http/Controllers/Admin/PostController.php",
-		"/Users/ws/Sites/myblog/config/categories.php",
 		"/Users/ws/Sites/myblog/storage/framework/views/6d50f9d742cc20d8c856f49cf90cf7a3",
-		"/Users/ws/Sites/myblog/config/blog.php",
 		"/Users/ws/Sites/myblog/app/User.php",
 		"/Users/ws/Sites/myblog/resources/views/admin/test.blade.php",
 		"/Users/ws/Sites/myapp/resources/views/admin_/dashboard.blade.php",
 		"/Users/ws/Sites/myblog/resources/admin/layout.blade.php",
 		"/Users/ws/Sites/myapp/resources/views/admin_/header.blade.php",
 		"/Users/ws/Sites/myblog/.gitignore",
-		"/Users/ws/Sites/myblog/app/Http/routes.php",
 		"/Users/ws/Sites/myapp/app/Http/routes.php",
 		"/Users/ws/Sites/myapp/app/Http/Kernel.php",
 		"/Users/ws/Sites/myapp/app/Tag.php",
@@ -471,7 +478,6 @@
 		"/Users/ws/Sites/myapp/app/Http/Requests/PostCreateRequest.php",
 		"/Users/ws/Sites/myapp/resources/views/admin/post/edit.blade.php",
 		"/Users/ws/Sites/myapp/database/migrations/2015_11_10_130714_restructure_posts_table.php",
-		"/Users/ws/Sites/myapp/app/Http/Controllers/Admin/UploadController.php",
 		"/Users/ws/Sites/myapp/app/Services/UploadsManager.php",
 		"/Users/ws/Sites/myapp/resources/views/admin/upload/_modals.blade.php",
 		"/Users/ws/Sites/myapp/resources/views/upload/index.blade.php",
@@ -530,33 +536,7 @@
 		"/Users/ws/Sites/myapp/app/Http/Controllers/TestController.php",
 		"/Users/ws/Sites/myapp/app/Http/Controllers/RequestController.php",
 		"/Users/ws/Sites/myapp/resources/views/admin/test.blade.php",
-		"/Users/ws/Sites/myapp/resources/views/admin/dashboard.blade.php",
-		"/Users/ws/Sites/myapp/resources/views/dashboard.blade.php",
-		"/Users/ws/Sites/myapp/resources/views/home.blade.php",
-		"/Users/ws/Sites/untitled.html",
-		"/Users/ws/Sites/myapp/app/Http/Middleware/VerifyCsrfToken.php",
-		"/Users/ws/Sites/myapp/bootstrap/app.php",
-		"/Users/ws/Sites/myapp/app/Http/Middleware/TestMiddleware.php",
-		"/Users/ws/Library/Application Support/Sublime Text 3/Packages/User/Laravel 5 Artisan.sublime-commands",
-		"/Users/ws/Library/Application Support/Sublime Text 3/Packages/Laravel 5 Artisan/Laravel 5 Artisan.sublime-settings",
-		"/Users/ws/Sites/myapp/resources/views/admin_template.blade.php",
-		"/Users/ws/Sites/myapp/resources/views/test.blade.php",
-		"/Users/ws/Sites/myapp/public/bower_components/AdminLTE/starter.html",
-		"/Users/ws/Sites/myapp/resources/views/dashboard.balde.php",
-		"/Users/ws/Sites/myapp/resources/views/footer.blade.php",
-		"/Users/ws/Sites/myapp/resources/views/header.blade.php",
-		"/Users/ws/Sites/myapp/resources/views/sidebar.blade.php",
-		"/Users/ws/Sites/yascmf/config/database.php",
-		"/Users/ws/Sites/yascmf/public/index.php",
-		"/Users/ws/Sites/yascmf/config/app.php",
-		"/Users/ws/Sites/yascmf/config/view.php",
-		"/Users/ws/Sites/yascmf/vendor/composer/ClassLoader.php",
-		"/Users/ws/Sites/pyrocms/vendor/symfony/debug/DebugClassLoader.php",
-		"/Users/ws/Sites/pyrocms/vendor/composer/ClassLoader.php",
-		"/Users/ws/Sites/pyrocms/core/anomaly/search-module/vendor/illuminate/support/ClassLoader.php",
-		"/Users/ws/Sites/pyrocms/vendor/illuminate/support/ClassLoader.php",
-		"/Users/ws/Sites/pyrocms/vendor/classpreloader/classpreloader/src/ClassLoader.php",
-		"/Users/ws/Sites/study/1023/View.php"
+		"/Users/ws/Sites/myapp/resources/views/admin/dashboard.blade.php"
 	],
 	"find":
 	{
@@ -575,6 +555,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"返回文件的详细信息",
+			"标签成功删除",
 			"formatErrors",
 			"Randomly Generated Tasks",
 			"folder",
@@ -615,86 +597,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/routes.php",
+					"file": "app/Http/Controllers/Admin/TagController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1431,
+						"buffer_size": 3157,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								184,
-								184
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 36.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/views/auth/login.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3095,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1496,
-								1496
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 600.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Http/Controllers/Auth/AuthController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1900,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								209,
-								209
+								2444,
+								2444
 							]
 						],
 						"settings":
@@ -706,120 +626,56 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "resources/lang/en/validation.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5675,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								453,
-								453
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1063.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "config/app.php",
+					"buffer": 1,
+					"file": "app/Services/UploadsManager.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8263,
+						"buffer_size": 3699,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1858,
-								1858
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 912.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "resources/lang/zh-CN/home.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1059,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								277,
-								277
+								3685,
+								3685
 							]
 						],
 						"settings":
 						{
 							"auto_name": "<?php",
 							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2750.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "vendor/laravel/framework/src/Illuminate/Validation/Validator.php",
+					"buffer": 2,
+					"file": "/Users/ws/Sites/myapp/app/Http/Controllers/Admin/UploadController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 71898,
+						"buffer_size": 3229,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21972,
-								21972
+								783,
+								783
 							]
 						],
 						"settings":
@@ -830,40 +686,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 19166.0,
+						"translation.y": 446.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "resources/views/admin/partials/errors.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 184,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								110,
-								110
-							]
-						],
-						"settings":
-						{
-							"auto_name": "@if (count($errors) > 0)",
-							"is_xml": false,
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -916,7 +742,7 @@
 	"project": "myblog.sublime-project",
 	"replace":
 	{
-		"height": 56.0
+		"height": 114.0
 	},
 	"save_all_on_build": true,
 	"select_file":
