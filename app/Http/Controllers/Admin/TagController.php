@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use App\Tag;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PostController extends Controller
+class TagController extends Controller
 {
     protected $pageAbout = [
-        'page_title' => 'Blog list',
+        'page_title' => 'Blog Tag',
         'page_description' => 'Control panel'
     ];
     /**
@@ -19,8 +19,11 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        return view('admin.post.index')->withPage($this->pageAbout);
+    {
+        $tags = Tag::all();
+        return view('admin.tag.index')
+                ->withPage($this->pageAbout)
+                ->withTags($tags);
     }
 
     /**
@@ -30,7 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tag.create')->withPage($this->pageAbout);
     }
 
     /**

@@ -2,7 +2,7 @@
 
 return [
     'name' => "StoneWorld",
-    'title' => "Laravel 5.1 Beauty",
+    'title' => "Blog后台",
     'subtitle' => 'A clean blog written in Laravel 5.1',
     'description' => 'This is my meta description',
     'author' => 'StoneWorld',

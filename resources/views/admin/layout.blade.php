@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/dist/css/AdminLTE.min.css")}}" >
   <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css")}}">
+  <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/plugins/datatables/dataTables.bootstrap.css")}}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,8 +32,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        {{ $page_title or "Page Title" }}
-        <small>{{ $page_description or null }}</small>
+        {{ $page['page_title'] }}
+        <small> {{ $page['page_description'] }}</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -42,7 +43,6 @@
 
     <!-- Main content -->
     <section class="content">
-
       @yield('content')
     </section>
     <!-- /.content -->
@@ -137,6 +137,9 @@
 <script src="{{ asset("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js")}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset("/bower_components/AdminLTE/dist/js/app.min.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/plugins/datatables/jquery.dataTables.min.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js")}}"></script>
+
 @yield('scripts')
 </body>
 </html>
