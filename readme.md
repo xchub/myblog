@@ -7,6 +7,7 @@ myblog是一个基于 Laravel 5.1、AdminLTE 的blog。
 4. 文章管理
 
 ##安装
+
 1. 克隆代码到本地
 
 ```
