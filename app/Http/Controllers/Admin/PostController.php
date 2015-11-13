@@ -20,7 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {   
-        return view('admin.post.index')->withPage($this->pageAbout);
+        return view('admin.post.create')->withPage($this->pageAbout);
     }
 
     /**

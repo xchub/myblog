@@ -7,8 +7,8 @@ use Storage;
 
 class UploadsManager
 {
-    $protected $disk;
-    $protected $mimeDected;
+    protected $disk;
+    protected $mimeDected;
 
     public function __construct(PhpRepository $mimeDetect)
     {
@@ -34,7 +34,7 @@ class UploadsManager
         $folderName = current($slice);
         $breadcrumbs = array_slice($breadcrumbs, 0, -1);
         $subfolders = [];
-        foreach (array_unique($this->disk->directory($folder)) as $subfolder) {
+        foreach (array_unique($this->disk->directories($folder)) as $subfolder) {
             $subfolders["/$subfolder"] = basename($subfolder);
         }
         $files = [];
@@ -51,7 +51,7 @@ class UploadsManager
 
     }
 
-    proteced function clearFolder($folder)
+    protected function clearFolder($folder)
     {
         return '/' . trim(str_replace('..', '', $folder), '/');
     }
@@ -60,7 +60,7 @@ class UploadsManager
      * @param  [type] $folder [description]
      * @return [type]         [description]
      */
-    proteced function breadcrumbs($folder)
+    protected function breadcrumbs($folder)
     {
         $folder = trim($folder, '/');
         $crumbs = ['/' => 'root'];
@@ -132,6 +132,58 @@ class UploadsManager
         return Carbon::createFromTimestamp(
             $this->disk->lastModified($path)
         );
+    }
+    /**
+     * 删除指定文件夹
+     * @param  [type] $folder [description]
+     * @return [type]         [description]
+     */
+    public function createDirectory($folder)
+    {
+        $folder = $this->clearFolder($folder);
+        if ($this->disk->exists($folder)) {
+            return "文件夹 '$folder' 以及存在.";
+        }
+        return $this->disk->makeDirectory($folder);
+    }
+    /**
+     * 删除一个文件夹
+     * @param  [type] $folder [description]
+     * @return [type]         [description]
+     */
+    public function delDirectory($folder)
+    {
+        $folder = $this->clearFolder($folder);
+        $filesFolders = array_merge(
+            $this->disk->directories($folder),
+            $this->disk->files($folder)
+        );
+        if (!empty($filesFolders)) {
+            return '文件夹不为空不能删除！';
+        }
+        return $this->disk->deleteDirectory($folder);
+    }
+    /**
+     * 保存文件
+     */
+    public function saveFile($path, $content)
+    {
+        $path = $this->clearFolder($path);
+        if ($this->disk->exists($path)) {
+            return "文件已经存在.";
+        }
+        return $this->disk->put($path, $content);
+    }
+    /**
+     * 删除文件
+     */
+    public function deleteFile($path)
+    {
+        $path = $this->clearFolder($path);
+        if (! $this->disk->exists($path)) {
+            return "文件不存在！";
+        }
+        return $this->disk->delete($path);
     }
 }
 

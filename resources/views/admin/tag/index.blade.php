@@ -36,7 +36,7 @@
                         	<a href="{{ url('admin/tag') }}/{{ $tag->id }}/edit" class="btn btn-xs btn-info">
                   				<i class="fa fa-edit"></i> 编辑
                 			   </a>
-                    			<button onclick="delete_file({{ $tag->id }},{{ $tag->title }})" class="btn btn-xs btn-danger">
+                    			<button onclick="delete_file({{ $tag->id }},'{{ $tag->title }}')" class="btn btn-xs btn-danger">
                       				<i class="fa fa-close"></i> 删除	
                     			</button>
                 		    </td>
@@ -56,7 +56,7 @@
         <button type="button" class="close" data-dismiss="modal">
           &times;
         </button>
-        <h4 class="modal-title">Please Confirm</h4>
+        <h4 class="modal-title">请确认</h4>
       </div>
       <div class="modal-body">
         <p class="lead">

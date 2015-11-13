@@ -1,27 +1,42 @@
-## Laravel PHP Framework
+##简介
+myblog是一个基于 Laravel 5.1、AdminLTE 的blog。
+##功能
+1. 登录认证
+2. 上传管理
+3. 标签管理
+4. 文章管理
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+##安装
+1. 克隆代码到本地
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+```
+git clone https://github.com/stoneworld/myblog
+cd myblog
+```
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+2. 安装依赖
 
-## Official Documentation
+```
+composer install
+```
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+3. 修改目录权限
 
-## Contributing
+```
+chmod -R 777 storage
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+4. 编辑 .env 并正确填写数据库部分。
 
-## Security Vulnerabilities
+```
+cp .env.example .env
+vim .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+5. 导入数据库
 
-### License
+```
+php artisan migrate
+php artisan db:seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
