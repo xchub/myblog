@@ -28,6 +28,9 @@ class TagController extends Controller
      */
     public function index()
     {
+        /*$tags = [11134, 12, 2];
+        $found = Tag::whereIn('tag', $tags)->lists('tag')->all();
+        dd($found);*/
         $tags = Tag::all();
         return view('admin.tag.index')
                 ->withPage($this->pageAbout)

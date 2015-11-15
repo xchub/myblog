@@ -107,4 +107,6 @@ class UploadController extends Controller
 	        ->back()
 	        ->withErrors([$error]);
 	}
+
+    
 }

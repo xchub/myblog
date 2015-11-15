@@ -22,7 +22,7 @@ class AuthController extends Controller
     |
     */
     protected $redirectAfterLogout = 'auth/login';//退出跳转
-    protected $redirectTo = 'admin/post';
+    protected $redirectTo;
     use AuthenticatesUsers;
 
     /**
@@ -32,6 +32,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = $this->redirectPath();
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 

@@ -12,7 +12,7 @@ return [
         'class' => 'fa fa-tags',
     ],
     2 => [
-        'name' => '上传管理',
+        'name' => '附件管理',
         'url' => 'admin/upload',
         'class' => 'fa fa-folder',
     ],
