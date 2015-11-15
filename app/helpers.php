@@ -18,3 +18,12 @@ function is_image($mimeType)
 {
     return starts_with($mimeType, 'image/');
 }
+/**
+ * return checked if true
+ * @param  [type] $value [description]
+ * @return [type]        [description]
+ */
+function checked($value)
+{
+    return $value ? 'checked' : '';
+}

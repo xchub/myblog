@@ -4,7 +4,7 @@
 <link href="{{ asset("/assets/selectize/css/selectize.bootstrap3.css")}}" rel="stylesheet">
 <link rel="stylesheet" href="http://cdn.bootcss.com/codemirror/4.10.0/codemirror.min.css">
 <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.4/styles/default.min.css">
-<link href="//cdn.bootcss.com/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet">
 <script src="http://cdn.bootcss.com/highlight.js/8.4/highlight.min.js"></script>
 <script src="http://cdn.bootcss.com/marked/0.3.2/marked.min.js"></script>
 <script type="text/javascript" src="http://cdn.bootcss.com/codemirror/4.10.0/codemirror.min.js"></script>
@@ -52,16 +52,19 @@ $(function() {
                         <label></label>
                         <div class="col-md-12">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="text" name="title" class="form-control" style="border-radius:4px" id="reservation" placeholder='标题：那是我夕阳下的奔跑'>
+                            <input type="text" name="title" class="form-control" style="border-radius:4px" id="reservation" placeholder='标题：那是我夕阳下的奔跑' value="{{ $title }}">
                         </div>
                     </div><br />
 
                     <div class="form-group">
                         <div class="col-md-12">
                             <select name="tags[]" id="tags" placeholder="标签：Laravel" class="form-control" multiple>
-                                <option value="1">Python</option>
-                                <option value="2">Laravel</option>
-                                <option value="3">Mysql</option>
+                                @foreach ($allTags as $tag)
+                                    <option @if (in_array($tag, $tags)) selected @endif
+                                    value="{{ $tag }}">
+                                      {{ $tag }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div><br /><br />
@@ -70,19 +73,25 @@ $(function() {
                         <label></label>
                         <div class="col-md-12">
                             <div class="editor">
-                                <textarea name="post" id="myEditor"></textarea>
+                                <textarea name="content" id="myEditor">{{ $content }}</textarea>
                             </div>
 
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-2">
-                            <input type="text" name='public' class="form-control timepicker" placeholder="发布日期">
+                        <div class="col-md-4">
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='text' name="publish_date" value="{{ $publish_date }}" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                            
                         </div>
                         <div class="col-md-4">
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" name="is_draft">
+                                <input {{ checked($is_draft) }} type="checkbox" name="is_draft">
                                 保存为草稿？
                               </label>
                             </div>
@@ -104,16 +113,15 @@ $(function() {
 @endsection
 @section('scripts')
 <script src="{{ asset("/assets/selectize/selectize.min.js")}}"></script>
-
-<script src="//cdn.bootcss.com/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap-datepicker/1.5.0/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="//cdn.bootcss.com/moment.js/2.10.6/moment.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <script>
 $(function(){
     $("#tags").selectize({
         create: true
       });
-    $(".timepicker").datepicker({
-        format: 'yyyy-mm-dd'
+    $('#datetimepicker1').datetimepicker({
+        format: 'MMMM-DD-YYYY hh:mm:ss'
     });
     
 })

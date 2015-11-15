@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Carbon\Carbon;
 
 class PostCreateRequest extends Request
 {
@@ -27,7 +28,19 @@ class PostCreateRequest extends Request
             'title' => 'required',
             'content' => 'required',
             'publish_date' => 'required',
-            'publish_time' => 'required',
+        ];
+    }
+
+    public function postFillData()
+    {
+        $published_at = new Carbon(
+            $this->publish_date.' '.$this->publish_time
+        );
+        return [
+            'title' => $this->title,
+            'content_raw' => $this->get('content'),
+            'is_draft' => (bool)$this->is_draft,
+            'published_at' => $published_at,
         ];
     }
 }

@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Jobs\PostFormFields;
+use App\Http\Requests\PostCreateRequest;
+use App\Http\Requests\PostUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -19,7 +23,9 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {   
-        return view('admin.post.create')->withPage($this->pageAbout);
+        return view('admin.post.index')
+                ->withPosts(Post::all())
+                ->withPage($this->pageAbout);
     }
 
     /**
@@ -29,7 +35,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $data = $this->dispatch(new PostFormFields());
+        return view('admin.post.create', $data)->withPage($this->pageAbout);;
     }
 
     /**
@@ -38,10 +45,15 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostCreateRequest $request)
     {
-        $post = $request->all();
-        dd($post);
+        
+        $post = Post::create($request->postFillData());
+        //dd($post);
+        $post->syncTags($request->get('tags', []));
+        return redirect()
+            ->route('admin.post.index')
+            ->withSuccess('新文章发布成功.');
     }
 
     /**
@@ -63,7 +75,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = $this->dispatch(new PostFormFields($id));
+        return view('admin.post.edit', $data);
     }
 
     /**
@@ -75,7 +88,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->fill($request->postFillData());
+        $post->save();
+        $post->syncTags($request->get('tags', []));
+        return redirect()
+            ->route('admin.post.index')
+            ->withSuccess('更新成功.');
     }
 
     /**
@@ -86,6 +105,12 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->tags()->detach();
+        $post->delete();
+        return redirect()
+            ->route('admin.post.index')
+            ->withSuccess('删除成功');
+    
     }
 }
