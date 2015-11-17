@@ -4,12 +4,13 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use EndaEditor;
 
 class Post extends Model
 {
     protected $dates = ['published_at'];
     protected $fillable = [
-        'title', 'content_raw', 'meta_description', 'is_draft', 'published_at',
+        'title', 'content_raw', 'content_html', 'meta_description', 'is_draft', 'published_at',
     ];
     public function tags()
     {
@@ -48,6 +49,14 @@ class Post extends Model
     public function getContentAttribute($value)
     {
         return $this->content_raw;
+    }
+    /**
+     * get the content_html
+     */
+    protected function SetContentRawAttribute($value)
+    {
+        $this->attributes['content_raw'] = $value;
+        $this->attributes['content_html'] = EndaEditor::MarkDecode($value);
     }
     /**
      * 编辑的话不再改变。只在添加的时候进行添加 考虑到URL问题 潜在404 
