@@ -42,16 +42,18 @@ $(function() {
     <div class="col-md-12">
         <div class="box box-primary">
             <div class="box-header">
-                <h3 class="box-title">写文章</h3>
+                <h3 class="box-title">编辑文章</h3>
             </div>
             <div class="box-body">
                 @include('admin.partials.errors')
                 @include('admin.partials.success')
-                <form action="{{ url('admin/post') }}" method="post">
+                <form action="{{ url('admin/post') }}/{{ $id }}" method="post">
                     <div class="form-group">
                         <label></label>
                         <div class="col-md-12">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="id" value="{{ $id }}">
+                            <input type="hidden" name="_method" value="PUT">
                             <input type="text" name="title" class="form-control" style="border-radius:4px" id="reservation" placeholder='标题：那是我夕阳下的奔跑' value="{{ $title }}">
                         </div>
                     </div><br />
@@ -99,7 +101,7 @@ $(function() {
                     <!-- /.form group -->
                     <div class="form-group">
                         <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-primary btn-lg btn-flat">发布文章</button>
+                            <button type="submit" class="btn btn-primary btn-lg btn-flat">编辑文章</button>
                         </div>
                     </div>
                 </form>

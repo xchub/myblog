@@ -49,11 +49,17 @@ class Post extends Model
     {
         return $this->content_raw;
     }
-
+    /**
+     * 编辑的话不再改变。只在添加的时候进行添加 考虑到URL问题 潜在404 
+     * 因为文章的url是 post/slug just so 
+     *判断当前模型是否已经存在 不存在添加 存在略过 
+     * @param [type] $value [description]
+     */
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;
-
+        //编辑的话不再改变。只在添加的时候进行添加 考虑到URL问题 潜在404 因为文章的url是 post/slug just so 
+        //判断当前模型是否已经存在 不存在添加 存在略过 
         if (! $this->exists) {
             $this->setUniqueSlug($value, '');
         }
@@ -61,13 +67,11 @@ class Post extends Model
 
     protected function setUniqueSlug($title, $extra)
     {
-        $slug = str_slug($title.'-'.$extra);
-
+        $slug = md5($title.'-'.$extra);//不是为了加密只是为了以防重复
         if (static::whereSlug($slug)->exists()) {
             $this->setUniqueSlug($title, $extra + 1);
             return;
         }
-
         $this->attributes['slug'] = $slug;
     }
 

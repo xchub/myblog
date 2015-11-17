@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-md-6 text-right" style="margin-left:15px">
                     <a href="{{ url('admin/tag/create') }}" class="btn btn-success btn-md"> <i class="fa fa-plus-circle"></i>
-                        New Post
+                        新标签
                     </a>
                 </div>
             </div>
@@ -49,8 +49,8 @@
                     </tbody>
                 </table>
             </div>
-            <!-- /.box-body --> </div>
-        <!-- /.box --> </div>
+        </div>
+    </div>
     <!-- /.col -->
 
 </div>

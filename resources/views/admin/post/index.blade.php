@@ -21,35 +21,63 @@
                         <tr>
                             <th>发布日期</th>
                             <th>名称</th>
-                            <th width="80">操作</th>
+                            <th width="100">操作</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($posts as $post)
                         <tr>
                             <td>{{ $post->published_at->format('j-M-y g:ia') }}</td>
-                            <td>{{ $post->title }}</td>
+                            <td><a href="{{ url('blog') }}/{{ $post->
+                                    slug }}">{{ $post->title }}</a></td>
                             <td>
                                 <a href="{{ url('admin/post') }}/{{ $post->
                                     id }}/edit" class="btn btn-xs btn-info"> <i class="fa fa-edit"></i>
                                     编辑
                                 </a>
-                                <a href="{{ url('blog') }}/{{ $post->
-                                    slug }}/edit" class="btn btn-xs btn-warning"> <i class="fa fa-edit"></i>
-                                    编辑
-                                </a>
+                                <button onclick="delete_file({{ $post->
+                                    id }},'{{ $post->title }}')" class="btn btn-xs btn-danger"> <i class="fa fa-close"></i>
+                                    删除
+                                </button>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
-            <!-- /.box-body --> </div>
-        <!-- /.box --> </div>
-    <!-- /.col -->
+        </div>
+    </div>
 
 </div>
-
+<div class="modal fade" id="modal-tag-delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">请确认</h4>
+            </div>
+            <div class="modal-body">
+                <p class="lead">
+                    <i class="fa fa-question-circle fa-lg"></i>
+                    &nbsp;
+          确定删除文章
+                    <kbd>
+                        <span id="delete-tag-name1"></span>
+                    </kbd>
+                    ?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <form method="POST" id="action" action="{{ url('admin/tag') }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-danger">确定</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('scripts')
 <script>
@@ -81,5 +109,11 @@
             }
         });
     });
+    function delete_file(id, title) {
+      $("#delete-tag-name1").html(title);
+      $("#delete-tag-name2").val(title);
+      $("#action").attr("action","{{ url('admin/post') }}/"+id);
+      $("#modal-tag-delete").modal("show");
+    }
 </script>
 @endsection
