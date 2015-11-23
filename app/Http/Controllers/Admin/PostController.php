@@ -12,10 +12,6 @@ use App\Post;
 
 class PostController extends Controller
 {
-    protected $pageAbout = [
-        'page_title' => 'Blog list',
-        'page_description' => 'Control panel'
-    ];
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +20,7 @@ class PostController extends Controller
     public function index(Request $request)
     {   
         return view('admin.post.index')
-                ->withPosts(Post::all())
-                ->withPage($this->pageAbout);
+                ->withPosts(Post::all());
     }
 
     /**
@@ -36,7 +31,7 @@ class PostController extends Controller
     public function create()
     {
         $data = $this->dispatch(new PostFormFields());
-        return view('admin.post.create', $data)->withPage($this->pageAbout);;
+        return view('admin.post.create', $data);
     }
 
     /**

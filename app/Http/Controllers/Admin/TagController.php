@@ -17,10 +17,6 @@ class TagController extends Controller
         'meta_description' => '',
         'page_image' => '',
     ];
-    protected $pageAbout = [
-        'page_title' => 'Blog Tag',
-        'page_description' => 'Control panel'
-    ];
     /**
      * Display a listing of the resource.
      *
@@ -33,7 +29,6 @@ class TagController extends Controller
         dd($found);*/
         $tags = Tag::all();
         return view('admin.tag.index')
-                ->withPage($this->pageAbout)
                 ->withTags($tags);
     }
 
@@ -48,7 +43,7 @@ class TagController extends Controller
         foreach ($this->fields as $field => $default) {
             $data[$field] = old($field, $default);
         }
-        return view('admin.tag.create', $data)->withPage($this->pageAbout);
+        return view('admin.tag.create', $data);
     }
 
     /**
@@ -93,7 +88,7 @@ class TagController extends Controller
         foreach (array_keys($this->fields) as $field) {
             $data[$field] = old($field, $tag->$field);
         }
-        return view('admin.tag.create', $data)->withPage($this->pageAbout);
+        return view('admin.tag.create', $data);
     }
 
     /**

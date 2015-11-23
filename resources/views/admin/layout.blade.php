@@ -12,6 +12,18 @@
   <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css")}}">
   <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/plugins/datatables/dataTables.bootstrap.css")}}">
   <script src="{{ asset("/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js")}}"></script>
+  <style>
+    body{
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: "Microsoft Yahei", arial, \5b8b\4f53, "Hiragino Sans GB", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      font-weight: 400;
+
+    }
+    h3{
+      font-family: "Microsoft Yahei", arial, \5b8b\4f53, "Hiragino Sans GB", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    }
+  </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -30,17 +42,6 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        {{ $page['page_title'] }}
-        <small> {{ $page['page_description'] }}</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
-
     <!-- Main content -->
     <section class="content">
       @yield('content')

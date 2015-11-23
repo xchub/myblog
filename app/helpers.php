@@ -27,3 +27,8 @@ function checked($value)
 {
     return $value ? 'checked' : '';
 }
+
+function admin_url($uri)
+{
+    return url('admin/'.$uri);
+}

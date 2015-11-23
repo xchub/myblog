@@ -23,7 +23,7 @@
                             <th>名称</th>
                             <th>标签简介</th>
                             <th>图片</th>
-                            <th width="80">操作</th>
+                            <th width="100">操作</th>
                         </tr>
                     </thead>
                     <tbody>

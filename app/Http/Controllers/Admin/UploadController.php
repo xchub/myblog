@@ -14,10 +14,6 @@ use File;
 class UploadController extends Controller
 {
 	protected $manager;
-	protected $pageAbout = [
-        'page_title' => 'Blog Upload',
-        'page_description' => 'Control panel'
-    ];
     public function __construct(UploadsManager $manager)
     {
     	$this->manager = $manager;
@@ -26,7 +22,7 @@ class UploadController extends Controller
     {
     	$folder = $request->get('folder');
     	$data = $this->manager->folderInfo($folder);
-    	return view('admin.upload.index', $data)->withPage($this->pageAbout);
+    	return view('admin.upload.index', $data);
     }
     /**
      * 创建文件夹
