@@ -9,7 +9,8 @@
     </div>
     </div>
     <div class="container">
-        @for($i=0, $i < $page, $i++)
+        @if ($music['status'] == 'success')
+        @for ($i=0; $i < $music['page']; $i++)
         <div class="album--nice-list row">
             @foreach ($music['info'][$i] as $key=>$item)
             <div class="album--nice col-md-3" data-type="163collect" data-thumbnail="{{ $item['playlist_coverImgUrl'] }}" data-id="{{ $item['playlist_id'] }}"  data-tooltip="{{ $item['playlist_name'] }}">
@@ -19,6 +20,9 @@
             @endforeach
         </div>
         @endfor
+        @else
+        <h2>没有相关歌曲</h2>
+        @endif
         <div class="music-page-navi"></div>
     </div>
 
