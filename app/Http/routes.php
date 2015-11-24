@@ -18,12 +18,14 @@ Route::get('admin', function(){
 Route::get('admin/post', 'Admin\PostController@index');
 Route::get('admin/tag', 'Admin\PostController@index');
 Route::get('admin/upload', 'Admin\PostController@index');*/
+Route::get('blog/{slug}', 'BlogController@showPost');
 Route::group([
     'namespace' => 'Admin', 
     'middleware' => 'auth',
 ], function () {
     Route::resource('admin/post', 'PostController');
     Route::resource('admin/tag', 'TagController', ['except' => 'show']);
+    Route::resource('admin/category', 'CategoryController');
     Route::get('admin/upload', 'UploadController@index');
     Route::post('admin/upload/file', 'UploadController@uploadFile');
     Route::delete('admin/upload/file', 'UploadController@deleteFile');

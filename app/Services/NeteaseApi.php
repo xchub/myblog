@@ -156,5 +156,3 @@ class NeteaseApi
 
 }
 
-/*$stoneworld = new NeteaseApi();
-@var_dump($stoneworld->getDetailPlayList(129697903));*/

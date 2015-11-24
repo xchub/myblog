@@ -71,8 +71,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $data = $this->dispatch(new PostFormFields($id));
-        return view('admin.post.edit', $data)
-                ->withPage($this->pageAbout);;
+        return view('admin.post.edit', $data);
     }
 
     /**

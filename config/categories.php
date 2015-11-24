@@ -18,6 +18,21 @@ return [
                 ],
             ],
             [
+                'label' => '分类管理',
+                'icon' => 'fa fa-tags',
+                'uri'  => 'category',
+                'submenus' => [
+                    [
+                        'label' => '所有分类',
+                        'uri' => 'category',
+                    ],
+                    [
+                        'label' => '新增分类',
+                        'uri' => 'category/create',
+                    ],
+                ],
+            ],
+            [
                 'label' => '标签管理',
                 'icon' => 'fa fa-tags',
                 'uri'  => 'tag',
