@@ -3,12 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use App\Category;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryCreateRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
+    protected $fields = [
+        'name' => '',
+        'slug' => '',
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +22,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $tags = Category::all();
+        $categories = Category::all();
         return view('admin.category.index')
-                ->withTags($tags);
+                ->withCategories($categories);
     }
 
     /**
@@ -28,7 +34,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $data = [];
+        foreach ($this->fields as $field => $default) {
+            $data[$field] = old($field, $default);
+        }
+        return view('admin.category.create', $data);
     }
 
     /**
@@ -37,9 +47,16 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryCreateRequest $request)
     {
-        //
+        $category = new Category();
+        foreach (array_keys($this->fields) as $field) {
+            $category->$field = $request->get($field);
+        }
+        $category->save();
+        return redirect('admin/category')
+            ->withSuccess("新分类 '$category->name'创建成功.");
+
     }
 
     /**
@@ -61,7 +78,12 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $data = ['id' => $id];
+        foreach (array_keys($this->fields) as $field) {
+            $data[$field] = old($field, $category->$field);
+        }
+        return view('admin.category.create', $data);
     }
 
     /**
@@ -71,9 +93,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryUpdateRequest $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        foreach (array_keys($this->fields) as $field) {
+            $category->$field = $request->get($field);
+        }
+        $category->save();
+        return redirect("admin/category/$id/edit")
+            ->withSuccess("修改成功");
     }
 
     /**
@@ -84,6 +112,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        $tag->delete();
+        return redirect('admin/tag')
+            ->withSuccess(" '$tag->tag' 标签成功删除！");
     }
 }

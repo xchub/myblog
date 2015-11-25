@@ -55,7 +55,19 @@ $(function() {
                             <input type="text" name="title" class="form-control" style="border-radius:4px" id="reservation" placeholder='标题：那是我夕阳下的奔跑' value="{{ $title }}">
                         </div>
                     </div><br />
-
+                    
+                    
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <select name="cid" id="catrgories" placeholder="" class="form-control" >
+                                @foreach ($allCategories as $category)
+                                    <option value="{{ $category->id }}">
+                                      {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div><br /><br />
                     <div class="form-group">
                         <div class="col-md-12">
                             <select name="tags[]" id="tags" placeholder="标签：Laravel" class="form-control" multiple>

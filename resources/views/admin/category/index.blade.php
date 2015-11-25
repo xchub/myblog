@@ -8,7 +8,7 @@
                     <h3 class="box-title">分类列表</h3>
                 </div>
                 <div class="col-md-6 text-right" style="margin-left:15px">
-                    <a href="{{ url('admin/tag/create') }}" class="btn btn-success btn-md"> <i class="fa fa-plus-circle"></i>
+                    <a href="{{ url('admin/category/create') }}" class="btn btn-success btn-md"> <i class="fa fa-plus-circle"></i>
                         新分类
                     </a>
                 </div>
@@ -21,25 +21,23 @@
                         <tr>
                             <th>标签</th>
                             <th>名称</th>
-                            <th>标签简介</th>
-                            <th>图片</th>
+                            <th>更新时间</th>
                             <th width="100">操作</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($tags as $tag)
+                        @foreach ($categories as $categories)
                         <tr>
-                            <td>{{ $tag->tag }}</td>
-                            <td>{{ $tag->title }}</td>
-                            <td>{{ $tag->meta_description }}</td>
-                            <td>{{ $tag->page_image }}</td>
+                            <td>{{ $categories->name }}</td>
+                            <td>{{ $categories->slug }}</td>
+                            <td>{{ $categories->updated_at->format('j-M-y g:ia') }}</td>
                             <td>
-                                <a href="{{ url('admin/tag') }}/{{ $tag->
+                                <a href="{{ url('admin/category') }}/{{ $categories->
                                     id }}/edit" class="btn btn-xs btn-info"> <i class="fa fa-edit"></i>
                                     编辑
                                 </a>
-                                <button onclick="delete_file({{ $tag->
-                                    id }},'{{ $tag->title }}')" class="btn btn-xs btn-danger">
+                                <button onclick="delete_file({{ $categories->
+                                    id }},'{{ $categories->name }}')" class="btn btn-xs btn-danger">
                                     <i class="fa fa-close"></i>
                                     删除
                                 </button>
@@ -74,7 +72,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <form method="POST" id="action" action="{{ url('admin/tag') }}">
+                <form method="POST" id="action" action="{{ url('admin/category') }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -118,7 +116,7 @@
     function delete_file(id, title) {
       $("#delete-tag-name1").html(title);
       $("#delete-tag-name2").val(title);
-      $("#action").attr("action","{{ url('admin/tag') }}/"+id);
+      $("#action").attr("action","{{ url('admin/category') }}/"+id);
       $("#modal-tag-delete").modal("show");
     }
 </script>

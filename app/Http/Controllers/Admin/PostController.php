@@ -42,7 +42,7 @@ class PostController extends Controller
      */
     public function store(PostCreateRequest $request)
     {
-        
+        //dd($request->all());
         $post = Post::create($request->postFillData());
         //dd($post);
         $post->syncTags($request->get('tags', []));

@@ -21,6 +21,7 @@
                         <tr>
                             <th>发布日期</th>
                             <th>名称</th>
+                            <th>分类</th>
                             <th width="100">操作</th>
                         </tr>
                     </thead>
@@ -31,6 +32,10 @@
                             <td><a href="{{ url('blog') }}/{{ $post->
                                     slug }}">{{ $post->title }}</a></td>
                             <td>
+                                {{ $post->categories->name}}
+                            </td>
+                            <td>
+                            
                                 <a href="{{ url('admin/post') }}/{{ $post->
                                     id }}/edit" class="btn btn-xs btn-info"> <i class="fa fa-edit"></i>
                                     编辑

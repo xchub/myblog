@@ -60,6 +60,18 @@ $(function() {
 
                     <div class="form-group">
                         <div class="col-md-12">
+                            <select name="cid" id="categories" placeholder="" class="form-control" >
+                                @foreach ($allCategories as $category)
+                                    <option @if ($cid == $category->id) selected @endif
+                                    value="{{ $category->id }}">
+                                      {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div><br /><br />
+                    <div class="form-group">
+                        <div class="col-md-12">
                             <select name="tags[]" id="tags" placeholder="标签：Laravel" class="form-control" multiple>
                                 @foreach ($allTags as $tag)
                                     <option @if (in_array($tag, $tags)) selected @endif

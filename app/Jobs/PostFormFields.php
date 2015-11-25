@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Tag;
 use App\Post;
+use App\Category;
 use App\Jobs\Job;
 use Carbon\Carbon;
 use Illuminate\Contracts\Bus\SelfHandling;
@@ -15,6 +16,7 @@ class PostFormFields extends Job implements SelfHandling
 
     protected $fieldList = [
         'title' => '',
+        'cid' => '',
         'content' => '',
         'meta_description' => '',
         'is_draft' => "0",
@@ -53,7 +55,8 @@ class PostFormFields extends Job implements SelfHandling
 
         return array_merge(
             $fields,
-            ['allTags' => Tag::lists('tag')->all()]
+            ['allTags' => Tag::lists('tag')->all()],
+            ['allCategories' => Category::all()]
         );
     }
 
@@ -76,7 +79,6 @@ class PostFormFields extends Job implements SelfHandling
         }
 
         $fields['tags'] = $post->tags()->lists('tag')->all();
-
         return $fields;
     }
 }

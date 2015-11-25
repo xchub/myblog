@@ -10,11 +10,16 @@ class Post extends Model
 {
     protected $dates = ['published_at'];
     protected $fillable = [
-        'title', 'content_raw', 'content_html', 'meta_description', 'is_draft', 'published_at',
+        'title', 'cid', 'content_raw', 'content_html', 'meta_description', 'is_draft', 'published_at',
     ];
     public function tags()
     {
         return $this->belongsToMany('App\Tag', 'post_tag_pivot');
+    }
+
+    public function categories()
+    {
+        return $this->belongsTo('App\Category', 'cid');
     }
 
     //同步标签

@@ -19,7 +19,7 @@ return [
             ],
             [
                 'label' => '分类管理',
-                'icon' => 'fa fa-tags',
+                'icon' => 'fa fa-paw',
                 'uri'  => 'category',
                 'submenus' => [
                     [

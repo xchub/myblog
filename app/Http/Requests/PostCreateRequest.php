@@ -38,6 +38,7 @@ class PostCreateRequest extends Request
         );
         return [
             'title' => $this->title,
+            'cid' => $this->cid,
             'content_raw' => $this->get('content'),
             'is_draft' => (bool)$this->is_draft,
             'published_at' => $published_at,

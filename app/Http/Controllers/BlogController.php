@@ -17,7 +17,7 @@ class BlogController extends Controller
 
     public function showPost($slug, Request $request)
     {
-        $post = Post::with('tags')->whereSlug($slug)->firstOrFail();
+        $post = Post::with('tags')->with('categories')->whereSlug($slug)->firstOrFail();
         //var_dump($post);
         return view('home.blog.content')->withPost($post);
     }
