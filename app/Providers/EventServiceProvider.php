@@ -16,8 +16,8 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
         ],
-        'Blog.view' => [
-            ViewBlogListener::class,
+        'App\Events\BlogView' => [
+            'App\Listeners\BlogViewListener',
         ],
     ];
 

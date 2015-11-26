@@ -20,7 +20,7 @@
 
                         <li id="view">
                             <span class="glyphicon glyphicon-eye-open"></span>
-                            &nbsp; 44 Views
+                            &nbsp; {{ $post->view_cache }} Views
                         </li>
                         <li>/</li>
                         <li>
