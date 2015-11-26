@@ -20,6 +20,8 @@ class CreatePostsTable extends Migration
             $table->text('content_raw');
             $table->text('content_html');
             $table->boolean('is_draft');
+            $table->integer('vote_cache')->unsigned()->default(0);
+            $table->integer('view_cache')->unsigned()->default(0);
             $table->timestamps();
             $table->timestamp('published_at')->index();
         });

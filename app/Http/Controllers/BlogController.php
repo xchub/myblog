@@ -21,4 +21,5 @@ class BlogController extends Controller
         //var_dump($post);
         return view('home.blog.content')->withPost($post);
     }
+
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>test</title>
+    <title>StoneWorld的Blog</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet">
@@ -23,12 +23,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://www.xtwind.com">StoneWorld</a>
+                <a class="navbar-brand" href="">StoneWorld</a>
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse">
                 <ul id="" class="nav navbar-nav">
                     <li id="menu-item-737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-737">
-                        <a href="">音乐</a>
+                        <a href="music">音乐</a>
                     </li>
 
                     <li id="menu-item-739" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-739">
@@ -53,19 +53,19 @@
     @yield('content')
     <div class="container-fluid container-fluid-bgcolor footer">
         <div class="text-center list-inline hover">
-            <li>
+            <!-- <li>
                 <a href="">网站地图</a>
             </li>
             <li>
                 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253549440'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1253549440' type='text/javascript'%3E%3C/script%3E"));</script>
-            </li>
+            </li> -->
         </div>
         <div class="text-center">
-            <p>夏天的风&nbsp;-&nbsp;一个感叹时光分享成长,追求互联网技术的独立博客</p>
+            <p>StoneWorld&nbsp;-&nbsp;流水当歌醉&nbsp;&nbsp;  落叶亦芳菲</p>
         </div>
         <div class="text-center">
             <p>
-                <a href="http://www.miitbeian.gov.cn/" rel="external nofollow" target="_blank">闽ICP备14021366号-1</a>
+                <a href="http://www.miitbeian.gov.cn/" rel="external nofollow" target="_blank">备案做什么</a>
             </p>
         </div>
     </div>

@@ -32,7 +32,7 @@
                         <li>
                             <a href="">
                                 <span class="glyphicon glyphicon-tag"></span>
-                                &nbsp;学习
+                                &nbsp;{{ $post->categories->name }}
                             </a>
                         </li>
                     </ul>
@@ -48,11 +48,8 @@
                                 &nbsp;标签：
                             </li>
                             <li>
-                            <?php
-
-                            ?>
                                 @foreach ($post->tags as $tag)
-                                <a href="http://www.xtwind.com/tag/javascript" rel="tag">{{ $tag->title }}</a>
+                                <a href="http://www.xtwind.com/tag/javascript" rel="tag">{{ $tag->tag }}</a>
                                 @endforeach
                             </li>
                             <li class="like_btn ">
