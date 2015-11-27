@@ -22,12 +22,12 @@
                             <span class="glyphicon glyphicon-eye-open"></span>
                             &nbsp; {{ $post->view_cache }} Views
                         </li>
-                        <li>/</li>
+                        <!-- <li>/</li>
                         <li>
                             <span class="glyphicon glyphicon-pencil"></span>
                             &nbsp;
                             <a href="http://www.xtwind.com/analysis-on-the-jquery-framework-top.html#respond">0 条评论</a>
-                        </li>
+                        </li> -->
                         <li>/</li>
                         <li>
                             <a href="">
@@ -62,6 +62,10 @@
                         </ul>
                     </div>
                 </div>
+                <div style="margin-left:20px">
+                    @include('home.disqus')
+                </div>
+                
             </div>
         </div>
     </div>

@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "overtrue/laravel-lang": "1.0.*",
         "dflydev/apache-mime-types": "^1.0",
-        "yuanchao/laravel-5-markdown-editor": "dev-master"
+        "yuanchao/laravel-5-markdown-editor": "dev-master",
+        "guzzlehttp/guzzle": "~5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -23,7 +23,7 @@ class BlogController extends Controller
 
         //利用事件进行访问数量的添加
         Event::fire(new BlogView($post));
-        return view('home.blog.content')->withPost($post);
+        return view('home.blog.content', compact('post', 'slug'));
     }
 
 }

@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{ $post->published_at->format('j-M-y g:ia') }}</td>
                             <td><a href="{{ url('blog') }}/{{ $post->
-                                    slug }}">{{ $post->title }}</a></td>
+                                    slug }}" target="_blank">{{ $post->title }}</a></td>
                             <td>
                                 {{ $post->categories->name}}
                             </td>

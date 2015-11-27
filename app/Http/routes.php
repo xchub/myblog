@@ -38,6 +38,8 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('music', 'MusicController@index');
 Route::get('music/ajax', 'MusicController@achieve');
+Route::get('contact', 'ContactController@showForm');
+Route::post('contact', 'ContactController@sendContactInfo');
 
 
 
