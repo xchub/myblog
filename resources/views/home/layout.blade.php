@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>StoneWorld的Blog</title>
+    <title>{{ $pageTitle }}</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("/assets/home/css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset("/assets/home/css/style.css") }}">    
     <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>    
     <script type="text/javascript" src="{{ asset("/assets/home/js/jquery.SuperSlide.2.1.1.js") }}"></script>
-    <style>body{ background-color: #fff; }</style>
+    <style>
+    body{ background-color: #fff; }
+    
+    .post_body h1, h2, h3, h4, h5 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+    }
+    </style>
     @yield('style')
 </head>
     <div role="banner" id="top" class="navbar navbar-static-top bs-docs-nav">
@@ -23,22 +32,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">StoneWorld</a>
+                <a class="navbar-brand" href="{{ url('blog') }}">StoneWorld</a>
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse">
                 <ul id="" class="nav navbar-nav">
-                    <li id="menu-item-737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-737">
-                        <a href="music">音乐</a>
+                    <li id="" class="">
+                        <a href="{{ url('music') }}">音乐</a>
                     </li>
 
-                    <li id="menu-item-739" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-739">
-                        <a href="">友链</a>
-                    </li>
-                    <li id="menu-item-740" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-296 current_page_item menu-item-740">
+                    
+                    <li id="" class="">
                         <a href="">归档</a>
                     </li>
-                    <li id="menu-item-738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-738">
-                        <a href="">留言</a>
+                    <li id="" class="">
+                        <a href="">友链</a>
+                    </li>
+                    <li id="" class="">
+                        <a href="{{ url('contact') }}">有关于我</a>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="/" >

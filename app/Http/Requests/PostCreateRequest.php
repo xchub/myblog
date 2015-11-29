@@ -28,6 +28,7 @@ class PostCreateRequest extends Request
             'title' => 'required',
             'content' => 'required',
             'publish_date' => 'required',
+            'first_imgurl' => 'required',
         ];
     }
 
@@ -42,6 +43,7 @@ class PostCreateRequest extends Request
             'content_raw' => $this->get('content'),
             'is_draft' => (bool)$this->is_draft,
             'published_at' => $published_at,
+            'first_imgurl' => $this->first_imgurl,
         ];
     }
 }

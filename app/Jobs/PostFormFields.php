@@ -22,6 +22,7 @@ class PostFormFields extends Job implements SelfHandling
         'is_draft' => "0",
         'publish_date' => '',
         'tags' => [],
+        'first_imgurl' => '',
     ];
     /**
      * Create a new job instance.

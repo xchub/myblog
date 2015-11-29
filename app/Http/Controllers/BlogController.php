@@ -19,11 +19,22 @@ class BlogController extends Controller
 
     public function showPost($slug, Request $request)
     {
-        $post = Post::whereSlug($slug)->firstOrFail();
 
+        $post = Post::whereSlug($slug)->firstOrFail();
+        $pageTitle = 'StoneWorld最新文章';
         //利用事件进行访问数量的添加
         Event::fire(new BlogView($post));
-        return view('home.blog.content', compact('post', 'slug'));
+        return view('home.blog.content', compact('post', 'slug', 'pageTitle'));
     }
+
+    public function getPopular()
+    {
+
+    }
+    public function getRecent()
+    {
+
+    }
+
 
 }

@@ -19,6 +19,8 @@ Route::get('admin/post', 'Admin\PostController@index');
 Route::get('admin/tag', 'Admin\PostController@index');
 Route::get('admin/upload', 'Admin\PostController@index');*/
 Route::get('blog/{slug}', 'BlogController@showPost');
+Route::get('blog', 'IndexController@getIndex');
+Route::get('categories/{category_slug}', 'IndexController@getCategoryIndex');
 Route::group([
     'namespace' => 'Admin', 
     'middleware' => 'auth',

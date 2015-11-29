@@ -57,7 +57,12 @@ $(function() {
                             <input type="text" name="title" class="form-control" style="border-radius:4px" id="reservation" placeholder='标题：那是我夕阳下的奔跑' value="{{ $title }}">
                         </div>
                     </div><br />
-
+                    <div class="form-group">
+                        <label></label>
+                        <div class="col-md-12">
+                            <input type="text" name="first_imgurl" class="form-control" style="border-radius:4px" id="reservation" placeholder='文章头图' value="{{ $first_imgurl }}">
+                        </div>
+                    </div><br />
                     <div class="form-group">
                         <div class="col-md-12">
                             <select name="cid" id="categories" placeholder="" class="form-control" >

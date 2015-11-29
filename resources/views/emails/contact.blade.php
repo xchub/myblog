@@ -1,13 +1,13 @@
 <p>
-  You have received a new message from your website contact form.
+  您收到一封来自于个人博客的邮件
 </p>
 <p>
-  Here are the details:
+  详情如下:
 </p>
 <ul>
-  <li>Name: <strong>{{ $name }}</strong></li>
-  <li>Email: <strong>{{ $email }}</strong></li>
-  <li>Phone: <strong>{{ $phone }}</strong></li>
+  <li>用户名: <strong>{{ $name }}</strong></li>
+  <li>邮箱: <strong>{{ $email }}</strong></li>
+  <li>联系方式: <strong>{{ $phone }}</strong></li>
 </ul>
 <hr>
 <p>

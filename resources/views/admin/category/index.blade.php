@@ -19,8 +19,8 @@
                 <table id="tags-table" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>标签</th>
                             <th>名称</th>
+                            <th>别名</th>
                             <th>更新时间</th>
                             <th width="100">操作</th>
                         </tr>

@@ -24,7 +24,7 @@ class MusicController extends Controller
 
     public function index()
     {
-        
+        $pageTitle = '那些音乐';   
         $musicList = $this->getMusicList();
         if ($musicList['status'] == 'success') {
             $listNum = 4;
@@ -35,7 +35,7 @@ class MusicController extends Controller
             $musicList['info'] = array_chunk($musicList['info'], $listNum);
             $musicList['page'] = count($musicList['info']);
         }
-        return view('home.music.index')->withMusic($musicList);
+        return view('home.music.index', compact('pageTitle'))->withMusic($musicList);
     }
 
     public function achieve(Request $request)

@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->boolean('is_draft');
             $table->integer('vote_cache')->unsigned()->default(0);
             $table->integer('view_cache')->unsigned()->default(0);
+            $table->string('first_imgurl');
             $table->timestamps();
             $table->timestamp('published_at')->index();
         });

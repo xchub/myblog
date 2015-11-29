@@ -1,7 +1,7 @@
 @extends('home.layout')
 @section('style')
 <style>
-    a{color: #008E59;}
+    .post_body a{color: #008E59;}
 </style>
 @endsection
 @section('content')
@@ -52,13 +52,13 @@
                                 <a href="http://www.xtwind.com/tag/javascript" rel="tag">{{ $tag->tag }}</a>
                                 @endforeach
                             </li>
-                            <li class="like_btn ">
+                            {{-- <li class="like_btn ">
                                 <a href="javascript:;" data-action="ding" data-id="1275" class="favorite">
                                     <span class="glyphicon glyphicon-heart "></span>
                                     <span class="count">0</span>
                                     Liker
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

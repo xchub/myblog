@@ -126,7 +126,7 @@ a:active,a:hover{ color: #46b855; text-decoration: none; transition: color ease 
 .post_content li{ color: #626773; border-bottom: 1px dashed #eeeeee; margin: 15px 0px; font-size: 16px; padding-bottom: 2px; }
 .post_content .quote{ color: #46b855; }
 .post_content .quote:hover{ color: #f77b6f; }
-.post_content p{ color: #626773; font-size: 18px; line-height: 2; }
+.post_content p{ color: #626773; font-size: 16px; line-height: 1.5; }
 .post_view_category{  margin-top: 20px; color: #adb8cc; border-top: 1px solid #eee; padding-top: 10px; }
 .post_view_category a{ background: #F0F2F7; border-radius: 3px; color: #8f9bb3; display: inline-block; height: 24px; line-height: 24px; margin-left: 10px; padding: 0 10px; }
 .post_view_category .like_btn{ border: 1px solid #adb8cc; border-radius:20px; padding: 2px 8px; float: right; }

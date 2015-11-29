@@ -10,7 +10,7 @@ class Post extends Model
 {
     protected $dates = ['published_at'];
     protected $fillable = [
-        'title', 'cid', 'content_raw', 'content_html', 'meta_description', 'is_draft', 'published_at',
+        'title', 'cid', 'content_raw', 'content_html', 'meta_description', 'is_draft', 'published_at', 'first_imgurl',
     ];
     public function tags()
     {
@@ -79,6 +79,10 @@ class Post extends Model
         }
     }
 
+    public function setFirstImgurlAttribute($value)
+    {
+        $this->attributes['first_imgurl'] = $value;
+    }
     protected function setUniqueSlug($title, $extra)
     {
         $slug = md5($title.'-'.$extra);//不是为了加密只是为了以防重复

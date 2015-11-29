@@ -13,7 +13,8 @@ class ContactController extends Controller
      */
     public function showForm()
     {
-        return view('home.contact');
+        $pageTitle = '有关于我';
+        return view('home.contact.contact', compact('pageTitle'));
     }
 
     /**
@@ -28,12 +29,12 @@ class ContactController extends Controller
         $data['messageLines'] = explode("\n", $request->get('message'));
 
         Mail::queue('emails.contact', $data, function ($message) use ($data) {
-            $message->subject('Blog Contact Form: '.$data['name'])
+            $message->subject('博客的邮件: '.$data['name'])
                 ->to(config('blog.contact_email'))
                 ->replyTo($data['email']);
         });
 
         return back()
-            ->withSuccess("Thank you for your message. It has been sent.");
+            ->withSuccess("感谢您的来信，我会尽快回复您的！");
     }
 }
