@@ -6,6 +6,7 @@
     }
     .post_body a{color: #008E59;}
     .post_body {
+        background-color: #F0F2F7;
         padding: 0 30px;
         margin: 0px;
     }

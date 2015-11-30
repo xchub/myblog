@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::pattern('slug', '[a-z0-9\-]+');
 Route::get('admin', function(){
     return redirect('admin/post');
 });
@@ -19,7 +19,7 @@ Route::get('admin/post', 'Admin\PostController@index');
 Route::get('admin/tag', 'Admin\PostController@index');
 Route::get('admin/upload', 'Admin\PostController@index');*/
 Route::get('blog/{slug}', 'BlogController@showPost');
-Route::get('blog', 'IndexController@getIndex');
+Route::get('/', 'IndexController@getIndex');
 Route::get('categories/{category_slug}', 'IndexController@getCategoryIndex');
 Route::group([
     'namespace' => 'Admin', 

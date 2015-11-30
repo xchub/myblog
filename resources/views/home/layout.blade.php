@@ -12,7 +12,7 @@
     <script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>    
     <script type="text/javascript" src="{{ asset("/assets/home/js/jquery.SuperSlide.2.1.1.js") }}"></script>
     <style>
-    body{ background-color: #fff; }
+
     
     .post_body h1, h2, h3, h4, h5 {
         font-family: inherit;
@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('blog') }}">StoneWorld</a>
+                <a class="navbar-brand" href="{{ url('/') }}">StoneWorld</a>
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse">
                 <ul id="" class="nav navbar-nav">
