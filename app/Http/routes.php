@@ -20,6 +20,7 @@ Route::get('admin/tag', 'Admin\PostController@index');
 Route::get('admin/upload', 'Admin\PostController@index');*/
 Route::get('blog/{slug}', 'BlogController@showPost');
 Route::get('/', 'IndexController@getIndex');
+Route::get('categories', ['as' => 'browse.categories', 'uses' => 'IndexController@getCategoryIndex']);
 Route::get('categories/{category_slug}', 'IndexController@getCategoryIndex');
 Route::group([
     'namespace' => 'Admin', 

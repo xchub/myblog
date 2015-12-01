@@ -1,8 +1,12 @@
 @extends('home.layout')
 @section('style')
+
 <style>
     .post_body a{color: #008E59;}
+    .social-share {float: right;}
+    .social-share .social-share-icon {padding-left: 5px;}
 </style>
+
 @endsection
 @section('content')
 <div class="container post_view_margin">
@@ -30,7 +34,7 @@
                         </li> -->
                         <li>/</li>
                         <li>
-                            <a href="">
+                            <a href=" {{ url('categories') }}/{{ $post->categories->slug }} ">
                                 <span class="glyphicon glyphicon-tag"></span>
                                 &nbsp;{{ $post->categories->name }}
                             </a>
@@ -49,23 +53,29 @@
                             </li>
                             <li>
                                 @foreach ($post->tags as $tag)
-                                <a href="http://www.xtwind.com/tag/javascript" rel="tag">{{ $tag->tag }}</a>
+                                <a href="{{ url('tag') }}/{{ $tag->tag }}" rel="tag">{{ $tag->tag }}</a>
                                 @endforeach
                             </li>
-                            {{-- <li class="like_btn ">
+                           <div class="social-share" data-initialized="true">
+                                <a href="#" class="social-share-icon icon-weibo"></a>
+                                <a href="#" class="social-share-icon icon-qq"></a>
+                                <a href="#" class="social-share-icon icon-wechat"></a>
+                                <a href="#" class="social-share-icon icon-qzone"></a>
+                                <a href="#" class="social-share-icon icon-douban"></a>
+                            </div>
+                            <link rel="stylesheet" href="{{ asset("/assets/share/dist/css/share.min.css") }}">
+                            <script src="{{ asset("/assets/share/dist/js/share.min.js") }}"></script>
+                            <!-- <li class="like_btn ">
                                 <a href="javascript:;" data-action="ding" data-id="1275" class="favorite">
                                     <span class="glyphicon glyphicon-heart "></span>
                                     <span class="count">0</span>
                                     Liker
                                 </a>
-                            </li> --}}
+                            </li> -->
                         </ul>
                     </div>
-                </div>
-                <div style="margin-left:20px">
                     @include('home.disqus')
-                </div>
-                
+                </div>  
             </div>
         </div>
     </div>

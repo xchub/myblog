@@ -6,3 +6,5 @@ Homestead.json
 myblog.sublime-project
 myblog.sublime-workspace
 /.idea
+.tags
+.tags_sorted_by_file

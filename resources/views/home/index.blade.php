@@ -42,7 +42,7 @@
 <div class="container body_container">
     <div class="row">
         <div class="col-sm-12">
-            <ul id="menu-%e4%b8%ad%e9%97%b4%e5%88%86%e7%b1%bb%e5%af%bc%e8%88%aa%e6%9d%a1" class="list-inline category_list">
+            <ul id="menu" class="list-inline category_list">
                 <li style="color:#363d4d;">分类目录：</li>
                 @foreach ($categories as $category)
                 <li id="menu-item-1096" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1096">
@@ -58,13 +58,13 @@
             @foreach ($articles as $article)
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" id="block">
                     <div class="thumbnail">
-                        <img src="http://cdn.xtwind.com/uploads/2015/11/8f6b35fcbaf9f9530a0ad8d24a8a83c4.jpg?imageView2/1/w/340/h/200/q/100" alt="感叹一下时光(九)">
+                        <img src="{{ asset('uploads/' . ($article->first_imgurl)) }}" alt="感叹一下时光(九)">
                         <div class="caption">
                             <h2>
                                 <a href="{{ url('blog') }}/{{ $article->slug }}"  title="{{ $article->title }}">{{ $article->title }}</a>
                             </h2>
                             <p>
-                                都说冬天，才是最适合恋爱的季节。尤其是在这样离别气息浓烈的氛围下，冷寂又落寞的我，突然想到这句话，就特别想念一个突来的怀抱。天气是这样的冷，心的温度也是冰凉的，喝热水派不上用场，冬天要来了。
+                                {{ strip_tags($article->content_html, '')}}
                             </p>
                         </div>
                     </div>
