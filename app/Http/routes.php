@@ -22,6 +22,7 @@ Route::get('blog/{slug}', 'BlogController@showPost');
 Route::get('/', 'IndexController@getIndex');
 Route::get('categories', ['as' => 'browse.categories', 'uses' => 'IndexController@getCategoryIndex']);
 Route::get('categories/{category_slug}', 'IndexController@getCategoryIndex');
+Route::get('tag/{tag_slug}', 'IndexController@getTagIndex');
 Route::group([
     'namespace' => 'Admin', 
     'middleware' => 'auth',

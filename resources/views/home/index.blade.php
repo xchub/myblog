@@ -5,31 +5,37 @@
         padding: 5px 14px;
         background-color: #fff;
     }
+    /*#slideBoxBanner {
+        background-image:url('{{ asset('/assets/home/img/archive.png') }}');
+    }*/
 </style>
 @section('content')
 <div class="container-fluid visible-md-block visible-lg-block  slideParent" id="slideBoxBanner">
     <div class="row slideBody" id="slideBody" >
         <ul class="list-unstyled">
+
+            @foreach ($viewArticles as $article)
             <li class="slide" >
                 <div class="col-md-5 col-md-offset-1 slideImg">
-                    <a href="" target="_blank">
-                        <img class='skip_lazyload' src='' alt='' title='#sliderCaption' />
+                    <a href="{{ url('blog') }}/{{ $article->slug }}" target="_blank">
+                        <img class='skip_lazyload' src="{{ asset('uploads/' . ($article->first_imgurl)) }}" alt='' title='#sliderCaption' />
                     </a>
                 </div>
                 <div class="col-md-5 slidePost">
-                    <a href="">
-                        <h2>test</h2>
+                    <a href="{{ url('blog') }}/{{ $article->slug }}">
+                        <h2>{{ $article->title }}</h2>
                     </a>
                     <p>
                         <p>
-                            表示在emergency_restart_interval所设值内出现SIGSEGV或者SIGBUS错误的php-cgi进程数如果超过 emergency_restart_threshold个，php-fpm就会优雅重启。这两个选项一般保持默认值。0 表示 '关闭该功能'. 默认值: 0 (关闭).
+                            {{ mb_substr(strip_tags($article->content_html, ''), 0, 108, 'utf-8')}}
                         </p>
                     </p>
-                    <a href="">
+                    <a href="{{ url('blog') }}/{{ $article->slug }}">
                         <button type="button" class="btn btn-default btn-lg btn_style">阅读全部</button>
                     </a>
                 </div>
             </li>
+            @endforeach
 
         </ul>
     </div>
@@ -37,7 +43,7 @@
     <a class="next_banner" id="next_banner" href="javascript:void(0)"></a>
     <div class="hd1" id="slideButton">
         <ul class="list-inline text-center"></ul>
-    </div>
+    </div> 
 </div>
 <div class="container body_container">
     <div class="row">
@@ -58,13 +64,14 @@
             @foreach ($articles as $article)
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" id="block">
                     <div class="thumbnail">
-                        <img src="{{ asset('uploads/' . ($article->first_imgurl)) }}" alt="感叹一下时光(九)">
+                        <img src="{{ asset('uploads/' . ($article->first_imgurl)) }}" alt="">
                         <div class="caption">
                             <h2>
                                 <a href="{{ url('blog') }}/{{ $article->slug }}"  title="{{ $article->title }}">{{ $article->title }}</a>
                             </h2>
                             <p>
-                                {{ strip_tags($article->content_html, '')}}
+                            {{ mb_substr(strip_tags($article->content_html, ''), 0, 108, 'utf-8')}}
+
                             </p>
                         </div>
                     </div>

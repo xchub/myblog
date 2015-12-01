@@ -53,7 +53,7 @@
                             </li>
                             <li>
                                 @foreach ($post->tags as $tag)
-                                <a href="{{ url('tag') }}/{{ $tag->tag }}" rel="tag">{{ $tag->tag }}</a>
+                                <a href="{{ url('tag') }}/{{ $tag->tag }}" rel="tag">{{ $tag->title }}</a>
                                 @endforeach
                             </li>
                            <div class="social-share" data-initialized="true">
