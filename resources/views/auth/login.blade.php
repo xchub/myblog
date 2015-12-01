@@ -17,6 +17,18 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <style>
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    border: 1px solid #CCC!important;
+  }
+  .login-box-body, .register-box-body {
+    border-radius: 5px;
+  }
+  .btn.btn-flat {
+    border-radius: 5px;
+  }
+  </style>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">

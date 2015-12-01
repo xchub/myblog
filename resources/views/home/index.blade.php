@@ -15,10 +15,10 @@
                     </a>
                     <p>
                         <p>
-                            这是个差点就无法在新年面世的作品，我在腊月的上旬开始了该主题的制作。多事之冬，好在今晚还是完成了它。这是我最为满意的一个作品，它的每一像素都充满了优雅气质。经典的工业设计，素雅的视觉体验，优雅的文艺气息。相信这是这款主题吸引友友们最主要的原因吧。请尽情使用吧！
+                            表示在emergency_restart_interval所设值内出现SIGSEGV或者SIGBUS错误的php-cgi进程数如果超过 emergency_restart_threshold个，php-fpm就会优雅重启。这两个选项一般保持默认值。0 表示 '关闭该功能'. 默认值: 0 (关闭).
                         </p>
                     </p>
-                    <a href="http://www.xtwind.com/summer-theme-open-source.html">
+                    <a href="">
                         <button type="button" class="btn btn-default btn-lg btn_style">阅读全部</button>
                     </a>
                 </div>
@@ -55,7 +55,7 @@
                         <a href="{{ url('blog') }}/{{ $article->slug }}"  title="{{ $article->title }}">{{ $article->title }}</a>
                     </h2>
                     <p>
-                        都说冬天，才是最适合恋爱的季节。尤其是在这样离别气息浓烈的氛围下，冷寂又落寞的我，突然想到这句话，就特别想念一个突来的怀抱。天气是这样的冷，心的温度也是冰凉的，喝热水派不上用场，冬天要来了。
+                       表示在emergency_restart_interval所设值内出现SIGSEGV或者SIGBUS错误的php-cgi进程数如果超过 emergency_restart_threshold个，php-fpm就会优雅重启。这两个选项一般保持默认值。0 表示 '关闭该功能'. 默认值: 0 (关闭).
                     </p>
                 </div>
             </div>

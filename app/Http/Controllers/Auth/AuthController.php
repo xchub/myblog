@@ -22,7 +22,7 @@ class AuthController extends Controller
     |
     */
     protected $redirectAfterLogout = 'auth/login';//退出跳转
-    protected $redirectTo;
+    protected $redirectTo = 'admin/post';
     use AuthenticatesUsers;
 
     /**
