@@ -15,4 +15,5 @@ return [
         'storage' => 'local',
         'webpath' => '/uploads/',
     ],
+    'link_limit' => 7,
 ];
