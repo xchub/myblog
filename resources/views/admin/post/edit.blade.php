@@ -60,7 +60,7 @@ $(function() {
                     <div class="form-group">
                         <label></label>
                         <div class="col-md-12">
-                            <input type="text" name="first_imgurl" class="form-control" style="border-radius:4px" id="reservation" placeholder='文章头图' value="{{ $first_imgurl }}">
+                            <input type="text" name="first_imgurl" class="form-control" style="border-radius:4px" id="reservation" placeholder='文章头图（500*300）' value="{{ $first_imgurl }}">
                         </div>
                     </div><br />
                     <div class="form-group">

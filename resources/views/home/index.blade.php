@@ -1,19 +1,8 @@
 @extends('home.layout')
-<style>
-    .pager li>a, .pager li>span {
-        display: inline-block;
-        padding: 5px 14px;
-        background-color: #fff;
-    }
-    /*#slideBoxBanner {
-        background-image:url('{{ asset('/assets/home/img/archive.png') }}');
-    }*/
-</style>
 @section('content')
 <div class="container-fluid visible-md-block visible-lg-block  slideParent" id="slideBoxBanner">
     <div class="row slideBody" id="slideBody" >
         <ul class="list-unstyled">
-
             @foreach ($viewArticles as $article)
             <li class="slide" >
                 <div class="col-md-5 col-md-offset-1 slideImg">
@@ -27,7 +16,7 @@
                     </a>
                     <p>
                         <p>
-                            {{ mb_substr(strip_tags($article->content_html, ''), 0, 108, 'utf-8')}}
+                            {{ str_limit(strip_tags($article->content_html, ''), 200)}}
                         </p>
                     </p>
                     <a href="{{ url('blog') }}/{{ $article->slug }}">
@@ -70,7 +59,7 @@
                                 <a href="{{ url('blog') }}/{{ $article->slug }}"  title="{{ $article->title }}">{{ $article->title }}</a>
                             </h2>
                             <p>
-                            {{ mb_substr(strip_tags($article->content_html, ''), 0, 108, 'utf-8')}}
+                             {{ str_limit(strip_tags($article->content_html, ''), 150)}}
 
                             </p>
                         </div>

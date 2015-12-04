@@ -707,7 +707,7 @@ jQuery(document).on("click", ".album--nice", function() {
 				}
 			},
 			error:function(){
-            	alert("请求出错！");
+            	alert("网络出错，换个试试！");
           	}
 
 		})
