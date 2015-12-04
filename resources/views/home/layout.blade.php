@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $pageTitle }}</title>
+    <title>{{ $pageTitle or '我的博客'}}</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet">
@@ -45,7 +45,7 @@
                         <a href="">归档</a>
                     </li>
                     <li id="" class="">
-                        <a href="">友链</a>
+                        <a href="{{ url('link') }}">友链</a>
                     </li>
                     <li id="" class="">
                         <a href="{{ url('contact') }}">有关于我</a>

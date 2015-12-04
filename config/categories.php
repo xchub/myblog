@@ -50,15 +50,15 @@ return [
             [
                 'label' => '友情链接',
                 'icon' => 'fa  fa-link',
-                'uri'  => 'links',
+                'uri'  => 'link',
                 'submenus' => [
                     [
                         'label' => '所有链接',
-                        'uri' => 'links',
+                        'uri' => 'link',
                     ],
                     [
                         'label' => '新增链接',
-                        'uri' => 'links/create',
+                        'uri' => 'link/create',
                     ],
                 ],
             ],

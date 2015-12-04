@@ -36,6 +36,7 @@ Route::group([
     Route::post('admin/upload/folder', 'UploadController@createFolder');
     Route::delete('admin/upload/folder', 'UploadController@deleteFolder');
     Route::post('admin/upload/img', 'UploadFileController@img');
+    Route::resource('admin/link', 'LinkController');
 });
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -44,6 +45,7 @@ Route::get('music', 'MusicController@index');
 Route::get('music/ajax', 'MusicController@achieve');
 Route::get('contact', 'ContactController@showForm');
 Route::post('contact', 'ContactController@sendContactInfo');
+Route::get('link', 'LinkController@index');
 
 
 
